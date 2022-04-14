@@ -27,8 +27,10 @@ class LoginFragment : Fragment() {
     private lateinit var editTextUserInputEmail: EditText
     private lateinit var editTextUserInputPassword: EditText
     private lateinit var buttonGenericLogin: Button
+
     //Firebase.
     private lateinit var auth: FirebaseAuth
+
     //Facebook.
     private lateinit var callbackManager: CallbackManager
     private lateinit var buttonFacebookLogin: LoginButton
@@ -53,9 +55,11 @@ class LoginFragment : Fragment() {
                 Log.d("TAG", "facebook:onSuccess:$loginResult")
                 handleFacebookAccessToken(loginResult.accessToken)
             }
+
             override fun onCancel() {
                 Log.d("TAG", "facebook:onCancel")
             }
+
             override fun onError(error: FacebookException) {
                 Log.d("TAG", "facebook:onError", error)
             }
@@ -74,8 +78,8 @@ class LoginFragment : Fragment() {
 
             task
                 .addOnSuccessListener {
-                findNavController().navigate(R.id.homeFragment)
-            }
+                    findNavController().navigate(R.id.homeFragment)
+                }
                 .addOnFailureListener {
                     Toast.makeText(requireContext(), it.message, Toast.LENGTH_LONG).show()
                 }
