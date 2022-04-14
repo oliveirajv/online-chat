@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">joaovictor-DR3-AT</string>
     <!-- Facebook. -->
-    <string name="facebook_app_id">1107923410056056</string>
-    <string name="fb_login_protocol_scheme">fb1107923410056056</string>
-    <string name="facebook_client_token">68b3d7434e42140ed79712b46b28cbf2</string>
+    <string name="facebook_app_id">1234</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">56789</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
