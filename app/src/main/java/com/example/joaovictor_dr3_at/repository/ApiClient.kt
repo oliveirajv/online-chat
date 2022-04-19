@@ -26,5 +26,5 @@ class ApiClient {
 //        return instance as Retrofit
 //    }
 //
-    fun getWeatherService() = getRetrofitInstance().create(WeatherService::class.java)
+    fun getWeatherService(): WeatherService = getRetrofitInstance().create(WeatherService::class.java)
 }

@@ -9,7 +9,6 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.google.firebase.auth.FirebaseAuth
 
 class HomeFragment : Fragment() {
 
@@ -39,12 +38,12 @@ class HomeFragment : Fragment() {
         textViewApiWeatherTemperature.text = Weather().temperature
     }
 
-//    private fun setUpViewModel(view: View) {
-//        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
-//
-//        viewModel.weather.observe(viewLifecycleOwner){
-//            if (it != null)
-//                showSnackBar(view, it.temperature)
-//        }
-//    }
+    private fun setUpViewModel(view: View) {
+        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+
+        viewModel.weather.observe(viewLifecycleOwner){
+            if (it != null)
+                showSnackBar(view, it.temperature)
+        }
+    }
 }
