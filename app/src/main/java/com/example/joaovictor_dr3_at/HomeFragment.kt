@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 
@@ -29,10 +30,14 @@ class HomeFragment : Fragment() {
         buttonGoToChat.setOnClickListener {
             findNavController().navigate(R.id.chatFragment)
         }
-
-//        val currentUser = auth.currentUser
-//        if (currentUser == null){
-//            findNavController().navigate(R.id.loginFragment)
-//        }
     }
+
+//    private fun setUpViewModel(view: View) {
+//        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+//
+//        viewModel.weather.observe(viewLifecycleOwner){
+//            if (it != null)
+//                showSnackBar(view, it.temperature)
+//        }
+//    }
 }

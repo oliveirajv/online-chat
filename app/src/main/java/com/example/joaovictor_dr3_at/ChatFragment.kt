@@ -55,7 +55,7 @@ class ChatFragment : Fragment() {
             viewModel.insert(userInputMessage)
         }
 
-        listViewChatMessages.setOnItemClickListener { adapterView, view, messagePosition, l ->
+        listViewChatMessages.setOnItemClickListener { _, _, messagePosition, _ ->
             viewModel.deleteMessage(messagePosition)
         }
     }

@@ -51,9 +51,9 @@ class LoginFragment : Fragment() {
         buttonFacebookLogin.setPermissions("email", "public_profile")
         buttonFacebookLogin.registerCallback(callbackManager, object :
             FacebookCallback<LoginResult> {
-            override fun onSuccess(loginResult: LoginResult) {
-                Log.d("TAG", "facebook:onSuccess:$loginResult")
-                handleFacebookAccessToken(loginResult.accessToken)
+            override fun onSuccess(result: LoginResult) {
+                Log.d("TAG", "facebook:onSuccess:$result")
+                handleFacebookAccessToken(result.accessToken)
             }
 
             override fun onCancel() {
@@ -86,6 +86,7 @@ class LoginFragment : Fragment() {
         }
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
