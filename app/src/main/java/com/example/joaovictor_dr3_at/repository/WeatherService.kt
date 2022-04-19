@@ -1,18 +1,19 @@
 package com.example.joaovictor_dr3_at.repository
 
+import com.example.joaovictor_dr3_at.Weather
 import com.google.gson.JsonObject
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface WeatherService {
-    @GET("https://goweather.herokuapp.com/weather/")
-    fun getWeather() : Call<JsonObject>
+    @GET("/weather/{city}")
+    suspend fun getWeather() : Weather
 
-    @GET("https://goweather.herokuapp.com/weather/")
-    fun getCityWeatherInformation(
-        @Path(value = "london", encoded = true) city : String
-    ) : Call<JsonObject>
+    @GET("/weather/{city}")
+    suspend fun getCityWeatherInformation(
+        @Path(value = "city") city : String = "rio"
+    ) : Weather
 
     //    @GET("https://goweather.herokuapp.com/weather/{city}")
 //    suspend fun list(

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
@@ -13,7 +14,9 @@ import com.google.firebase.auth.FirebaseAuth
 class HomeFragment : Fragment() {
 
 //    private lateinit var auth: FirebaseAuth
-    private  lateinit var buttonGoToChat: Button
+    private lateinit var buttonGoToChat: Button
+    private lateinit var textViewApiWeatherTemperature: TextView
+    private lateinit var textViewApiWeatherDescription: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +33,10 @@ class HomeFragment : Fragment() {
         buttonGoToChat.setOnClickListener {
             findNavController().navigate(R.id.chatFragment)
         }
+
+        textViewApiWeatherTemperature = view.findViewById(R.id.textViewApiWeatherTemperature)
+        textViewApiWeatherDescription = view.findViewById(R.id.textViewApiWeatherDescription)
+        textViewApiWeatherTemperature.text = Weather().temperature
     }
 
 //    private fun setUpViewModel(view: View) {

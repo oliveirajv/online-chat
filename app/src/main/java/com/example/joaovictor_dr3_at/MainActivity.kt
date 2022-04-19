@@ -14,29 +14,29 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        getWeather()
+//        getWeather()
     }
 
-    fun getWeather(){
-        val retrofitClient = ApiClient
-            .getRetrofitInstance("https://goweather.herokuapp.com/weather/{city}")
-
-        val weatherService = retrofitClient.create(WeatherService::class.java)
-
-        weatherService.getWeather().enqueue(object : retrofit2.Callback<JsonObject> {
-            override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
-                var data = mutableListOf<String>()
-
-                response.body()?.keySet()?.iterator()?.forEach {
-                    data.add(it)
-                }
-
-                println(data.count())
-            }
-
-            override fun onFailure(call: Call<JsonObject>, t: Throwable) {
-                Log.d("WEATHER_API", "Não funcionou.")
-            }
-        })
-    }
+//    fun getWeather(){
+//        val retrofitClient = ApiClient
+//            .getRetrofitInstance("https://goweather.herokuapp.com/weather/{city}")
+//
+//        val weatherService = retrofitClient.create(WeatherService::class.java)
+//
+//        weatherService.getWeather().enqueue(object : retrofit2.Callback<JsonObject> {
+//            override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
+//                var data = mutableListOf<String>()
+//
+//                response.body()?.keySet()?.iterator()?.forEach {
+//                    data.add(it)
+//                }
+//
+//                println(data.count())
+//            }
+//
+//            override fun onFailure(call: Call<JsonObject>, t: Throwable) {
+//                Log.d("WEATHER_API", "Não funcionou.")
+//            }
+//        })
+//    }
 }

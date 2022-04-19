@@ -5,10 +5,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiClient {
     companion object{
-        fun getRetrofitInstance(path: String) : Retrofit{
+        fun getRetrofitInstance() : Retrofit{
             return Retrofit
                 .Builder()
-                .baseUrl(path)
+                .baseUrl("https://goweather.herokuapp.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
         }
@@ -26,5 +26,5 @@ class ApiClient {
 //        return instance as Retrofit
 //    }
 //
-//    fun getWeatherService() = getInstance().create(WeatherService::class.java)
+    fun getWeatherService() = getRetrofitInstance().create(WeatherService::class.java)
 }
