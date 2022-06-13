@@ -1,7 +1,9 @@
-# joaovictor-DR3-AT
+# Oline chat.
+  
+  I use Firebase as server
 
-- [x] Autenticação com Facebook.
-- [x] Autenticação com e-mail e senha.
-- [x] Listar, cadastrar, exibir, atualizar e excluir os dados.
-- [ ] Consumo de API.
-- [x] Sincronização de dados em tempo real.
+- [x] Authentication with Facebook.
+- [x] Authentication with e-mail and password.
+- [x] List, register, show, update and delete the data.
+- [ ] Use of API.
+- [x] Real-time data synchronization.
