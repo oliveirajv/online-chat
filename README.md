@@ -1,6 +1,6 @@
-# Oline chat.
+# Online chat.
   
-  I use Firebase as server
+  I use Firebase as server.
 
 - [x] Authentication with Facebook.
 - [x] Authentication with e-mail and password.
